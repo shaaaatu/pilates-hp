@@ -1,0 +1,1897 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Wellbena — 小田原ピラティス & コミュニティサロン ウェルビナ</title>
+<meta name="description" content="女性が美しくしなやかにエイジング世代を送るための、ピラティス × コンディショニング × 美容のスタジオ。小田原市浜町。" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --paper:#f1ebe0;
+  --paper-2:#ebe3d4;
+  --ivory:#fbf7ee;
+  --ink:#1c1813;
+  --ink-2:#2a221b;
+  --ink-soft:#4a3f33;
+  --mute:#7e6f5e;
+  --line:#cfc3ad;
+  --line-soft:#dccdb1;
+  --bronze:#9c7a4b;
+  --bronze-deep:#7d5e34;
+  --sage:#7d8169;
+  --clay:#a86c4f;
+
+  --display: "Fraunces", "Shippori Mincho B1", "Times New Roman", serif;
+  --display-jp: "Shippori Mincho B1", "Fraunces", serif;
+  --sans: "Manrope", "Noto Sans JP", system-ui, sans-serif;
+  --sans-jp: "Noto Sans JP", "Manrope", system-ui, sans-serif;
+
+  --container: 1360px;
+  --gutter: clamp(20px, 4vw, 56px);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:var(--paper);color:var(--ink)}
+body{
+  font-family:var(--sans-jp);
+  font-weight:400;
+  font-size:15.5px;
+  line-height:1.78;
+  letter-spacing:.02em;
+  background:
+    radial-gradient(1200px 800px at 80% -10%, rgba(156,122,75,.08), transparent 60%),
+    radial-gradient(900px 700px at -10% 110%, rgba(125,129,105,.07), transparent 60%),
+    var(--paper);
+  overflow-x:hidden;
+}
+
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* grain overlay */
+body::after{
+  content:"";
+  position:fixed; inset:0;
+  pointer-events:none; z-index:1;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.11 0 0 0 0 0.09 0 0 0 0 0.07 0 0 0 .35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity:.55;
+  mix-blend-mode:multiply;
+}
+
+/* layout */
+.wrap{max-width:var(--container);margin:0 auto;padding:0 var(--gutter);position:relative;z-index:2}
+.hairline{height:1px;background:var(--line);transform-origin:left center}
+.eyebrow{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  font-weight:500;
+}
+.eyebrow .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--bronze);margin-right:10px;transform:translateY(-2px)}
+
+/* ====== TOP MARQUEE ====== */
+.marquee{
+  background:var(--ink);
+  color:var(--paper);
+  overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  position:relative;
+  z-index:60;
+}
+.marquee-track{
+  display:flex; gap:64px;
+  white-space:nowrap;
+  padding:9px 0;
+  animation:scroll 38s linear infinite;
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+}
+.marquee-track span{display:inline-flex;align-items:center;gap:18px;opacity:.8}
+.marquee-track svg{flex:none}
+@keyframes scroll{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ====== HEADER ====== */
+.header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(14px) saturate(1.05);
+  -webkit-backdrop-filter: blur(14px) saturate(1.05);
+  background: rgba(241,235,224,.78);
+  border-bottom:1px solid rgba(28,24,19,.08);
+}
+.header-inner{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items:center;
+  padding:18px 0;
+  gap:24px;
+}
+.brand{
+  display:flex; flex-direction:column; line-height:1;
+}
+.brand .name{
+  font-family:var(--display);
+  font-weight:400;
+  font-style:italic;
+  font-size:26px;
+  letter-spacing:.005em;
+  color:var(--ink);
+}
+.brand .sub{
+  margin-top:6px;
+  font-family:var(--sans);
+  font-size:9.5px;
+  letter-spacing:.36em;
+  text-transform:uppercase;
+  color:var(--mute);
+}
+.nav{
+  display:flex; gap:30px; justify-content:center; align-items:center;
+}
+.nav a{
+  font-family:var(--sans-jp);
+  font-size:12.5px;
+  letter-spacing:.18em;
+  color:var(--ink-2);
+  position:relative;
+  padding:6px 0;
+}
+.nav a .en{
+  display:block;
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:300;
+  font-size:10px;
+  letter-spacing:.18em;
+  color:var(--bronze);
+  margin-bottom:2px;
+  transition:color .3s;
+}
+.nav a::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:0;
+  height:1px; background:var(--ink);
+  transform:scaleX(0); transform-origin:right center;
+  transition:transform .5s cubic-bezier(.7,0,.2,1);
+}
+.nav a:hover::after{transform:scaleX(1); transform-origin:left center}
+.nav a:hover .en{color:var(--ink)}
+
+.header-cta{justify-self:end; display:flex; gap:14px; align-items:center}
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--sans);
+  font-size:11.5px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  padding:13px 22px;
+  border-radius:999px;
+  border:1px solid var(--ink);
+  color:var(--ink);
+  transition:all .35s ease;
+  white-space:nowrap;
+}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:var(--bronze-deep);border-color:var(--bronze-deep)}
+.btn .arrow{
+  display:inline-block; width:14px; height:1px; background:currentColor; position:relative;
+}
+.btn .arrow::after{
+  content:""; position:absolute; right:0; top:-3px;
+  width:7px; height:7px; border-top:1px solid currentColor; border-right:1px solid currentColor;
+  transform:rotate(45deg);
+}
+.menu-toggle{display:none}
+
+/* ====== HERO ====== */
+.hero{
+  position:relative;
+  padding:36px 0 88px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.2fr .9fr;
+  gap:48px;
+  align-items:end;
+}
+.hero-left{ position:relative; padding-top:30px; }
+.hero-meta{
+  display:flex; align-items:center; gap:18px;
+  margin-bottom:42px;
+}
+.hero-meta .num{
+  font-family:var(--display);
+  font-style:italic;
+  font-size:13px;
+  color:var(--bronze-deep);
+}
+.hero-meta .line{flex:1; height:1px; background:var(--line)}
+
+.hero h1{
+  font-family:var(--display-jp);
+  font-weight:500;
+  font-size: clamp(48px, 7.4vw, 116px);
+  line-height:1.04;
+  letter-spacing:-.01em;
+  margin:0 0 28px;
+  color:var(--ink);
+}
+.hero h1 .it{
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:300;
+  letter-spacing:-.02em;
+  color:var(--bronze-deep);
+}
+.hero h1 .small{
+  display:block;
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:300;
+  font-size: clamp(18px, 1.6vw, 26px);
+  letter-spacing:.02em;
+  color:var(--ink-soft);
+  margin-top:10px;
+}
+.hero-lede{
+  max-width: 470px;
+  font-size:15px;
+  line-height:2.0;
+  color:var(--ink-soft);
+  margin: 0 0 36px;
+}
+.hero-actions{display:flex; gap:14px; flex-wrap:wrap}
+
+.hero-photo{
+  position:relative;
+  aspect-ratio: 3/4;
+  overflow:hidden;
+  border-radius: 2px;
+  background:#d8cdb8;
+}
+.hero-photo img{
+  width:100%; height:100%;
+  object-fit:cover;
+  transform:scale(1.02);
+  filter: contrast(1.02) saturate(.92);
+}
+.hero-photo::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(28,24,19,0) 55%, rgba(28,24,19,.42) 100%);
+}
+.photo-tag{
+  position:absolute;
+  left:24px; bottom:22px; right:24px;
+  color:var(--paper);
+  display:flex; justify-content:space-between; align-items:flex-end;
+  font-family:var(--sans);
+  font-size:10.5px; letter-spacing:.3em; text-transform:uppercase;
+  z-index:2;
+}
+.photo-tag .it{
+  font-family:var(--display); font-style:italic; font-weight:300;
+  text-transform:none; letter-spacing:.02em; font-size:14px;
+}
+
+.hero-bottom{
+  margin-top:64px;
+  display:grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items:center;
+  gap:36px;
+}
+.hero-bottom .stat{
+  display:flex; flex-direction:column; gap:4px;
+}
+.hero-bottom .stat .k{
+  font-family:var(--display); font-style:italic; font-weight:300;
+  font-size:32px; color:var(--ink);
+  line-height:1;
+}
+.hero-bottom .stat .v{
+  font-family:var(--sans); font-size:10.5px; letter-spacing:.28em; text-transform:uppercase; color:var(--mute);
+}
+.hero-bottom .scroll{
+  display:flex; align-items:center; gap:14px;
+  color:var(--ink-soft);
+  font-family:var(--sans); font-size:10.5px; letter-spacing:.32em; text-transform:uppercase;
+}
+.hero-bottom .scroll .ln{ width:54px; height:1px; background:var(--ink-soft); position:relative; overflow:hidden; }
+.hero-bottom .scroll .ln::after{
+  content:""; position:absolute; left:0; top:0; width:30%; height:100%;
+  background:var(--bronze);
+  animation: ln 2.6s ease-in-out infinite;
+}
+@keyframes ln{ 0%{transform:translateX(-100%)} 100%{transform:translateX(330%)} }
+
+/* ====== SECTION HEADER ====== */
+.section{ padding: clamp(80px, 10vw, 160px) 0; position:relative; }
+.section-head{
+  display:grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap:48px;
+  align-items:end;
+  margin-bottom: 72px;
+}
+.sec-num{
+  font-family:var(--display); font-style:italic; font-weight:300;
+  font-size: clamp(64px, 9vw, 144px);
+  line-height:.9;
+  color:var(--bronze);
+  letter-spacing:-.02em;
+}
+.sec-num small{
+  font-style:normal;
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--mute);
+  display:block;
+  margin-top:14px;
+}
+.sec-title{
+  font-family:var(--display-jp);
+  font-weight:500;
+  font-size: clamp(36px, 4.6vw, 64px);
+  line-height:1.18;
+  margin:0 0 14px;
+  letter-spacing:.005em;
+}
+.sec-title .en{
+  display:block;
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:300;
+  font-size: clamp(15px, 1.3vw, 19px);
+  letter-spacing:.04em;
+  color:var(--bronze-deep);
+  margin-bottom:18px;
+}
+.sec-lede{
+  font-size:14.5px;
+  color:var(--ink-soft);
+  max-width:540px;
+  line-height:2.0;
+}
+
+/* ====== 01 ピラティスとは ====== */
+.pilates{
+  position:relative;
+}
+.pilates::before{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, transparent 0%, rgba(235,227,212,.4) 30%, rgba(235,227,212,.4) 70%, transparent 100%);
+  z-index:-1;
+}
+.pilates-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:80px;
+  align-items:start;
+}
+.pilates-text{
+  position:sticky; top:100px;
+}
+.pilates-text p{
+  font-size:15px; line-height:2.0; color:var(--ink-soft); margin:0 0 22px;
+}
+.pilates-text .quote{
+  font-family:var(--display);
+  font-style:italic; font-weight:300;
+  font-size:23px; line-height:1.55;
+  color:var(--ink);
+  border-left:1px solid var(--bronze);
+  padding-left:22px;
+  margin:32px 0;
+}
+.principles{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:0;
+  border-top:1px solid var(--line);
+  border-left:1px solid var(--line);
+}
+.principle{
+  border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line);
+  padding:30px 26px;
+  background:rgba(251,247,238,.5);
+  transition:background .4s;
+  position:relative;
+}
+.principle:hover{background:rgba(251,247,238,1)}
+.principle .pn{
+  font-family:var(--display); font-style:italic; font-weight:300;
+  color:var(--bronze-deep);
+  font-size:14px;
+  display:block;
+  margin-bottom:10px;
+}
+.principle .pt{
+  font-family:var(--display-jp);
+  font-weight:600;
+  font-size:21px;
+  margin-bottom:8px;
+  letter-spacing:.01em;
+}
+.principle .pd{
+  font-size:12.5px;
+  color:var(--mute);
+  line-height:1.7;
+}
+
+.founder-card{
+  margin-top:64px;
+  display:grid;
+  grid-template-columns: auto 1fr;
+  gap:24px;
+  padding:28px;
+  background: var(--ivory);
+  border:1px solid var(--line);
+  align-items:center;
+}
+.founder-card .badge{
+  width:74px; height:74px; border-radius:50%;
+  background: linear-gradient(135deg, var(--bronze) 0%, var(--bronze-deep) 100%);
+  color:var(--paper);
+  display:grid; place-items:center;
+  font-family:var(--display); font-style:italic; font-weight:300; font-size:30px;
+}
+.founder-card .who{
+  font-family:var(--display-jp); font-weight:600; font-size:17px; margin-bottom:4px;
+}
+.founder-card .what{
+  font-size:12.5px; color:var(--mute);
+}
+
+/* ====== 02 WELLBENA ====== */
+.wellbena{ background: var(--ink); color:var(--paper); position:relative; overflow:hidden;}
+.wellbena::before{
+  content:""; position:absolute;
+  inset:0;
+  background:
+    radial-gradient(800px 500px at 90% 20%, rgba(156,122,75,.18), transparent 60%),
+    radial-gradient(700px 500px at 0% 80%, rgba(125,129,105,.12), transparent 60%);
+  pointer-events:none;
+}
+.wellbena .sec-num{ color: var(--bronze); }
+.wellbena .sec-num small{ color:#a89a83 }
+.wellbena .sec-title{ color: var(--paper); }
+.wellbena .sec-title .en{ color: var(--bronze); }
+.wellbena .sec-lede{ color: #cdbfa9; }
+
+.philosophy{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap:80px;
+  align-items:center;
+  position:relative;
+  z-index:1;
+}
+.philosophy h3{
+  font-family:var(--display-jp);
+  font-weight:500;
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height:1.4;
+  margin:0 0 30px;
+  color:var(--paper);
+}
+.philosophy h3 .it{
+  font-family:var(--display); font-style:italic; font-weight:300;
+  color:var(--bronze);
+}
+.philosophy p{
+  color:#cdbfa9;
+  margin:0 0 18px;
+  line-height:2.0;
+  font-size:14.5px;
+}
+
+.pillars{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:0;
+  margin-top:40px;
+}
+.pillar{
+  display:grid;
+  grid-template-columns: 60px 1fr auto;
+  gap:24px;
+  padding:24px 0;
+  border-top:1px solid rgba(255,255,255,.12);
+  align-items:center;
+}
+.pillar:last-child{border-bottom:1px solid rgba(255,255,255,.12)}
+.pillar .num{
+  font-family:var(--display); font-style:italic; font-weight:300;
+  color:var(--bronze); font-size:18px;
+}
+.pillar .title-jp{
+  font-family:var(--display-jp); font-weight:600; font-size:21px; color:var(--paper);
+}
+.pillar .title-en{
+  font-family:var(--display); font-style:italic; font-weight:300;
+  color:#a89a83; font-size:14px; margin-top:2px;
+}
+.pillar .icon{
+  width:38px; height:38px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.18);
+  display:grid; place-items:center;
+  color:var(--bronze);
+  font-family:var(--display); font-style:italic; font-size:14px;
+}
+
+.instructor{
+  display:grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap:60px;
+  margin-top:120px;
+  align-items:center;
+  position:relative;
+  z-index:1;
+}
+.instructor-photo{
+  aspect-ratio:4/5;
+  background:#2c241c;
+  overflow:hidden;
+  position:relative;
+}
+.instructor-photo img{
+  width:100%; height:100%; object-fit:cover;
+  filter:contrast(1.05) saturate(.85) brightness(.95);
+}
+.instructor-photo::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(28,24,19,0) 60%, rgba(28,24,19,.5) 100%);
+}
+.ins-eyebrow{ color:var(--bronze); margin-bottom:18px}
+.instructor-info h4{
+  font-family:var(--display-jp);
+  font-weight:600;
+  font-size: clamp(28px, 3vw, 40px);
+  margin:0 0 6px;
+}
+.instructor-info h4 small{
+  display:block;
+  font-family:var(--display); font-style:italic; font-weight:300;
+  color:var(--bronze); font-size:18px; margin-top:6px;
+}
+.instructor-info .bio{
+  margin:24px 0 30px;
+  color:#cdbfa9;
+  line-height:2.0;
+}
+.creds{
+  display:flex; flex-direction:column; gap:0;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.creds li{
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,.12);
+  font-size:13px;
+  color:#cdbfa9;
+  list-style:none;
+}
+.creds li .num{ color:var(--bronze); font-family:var(--display); font-style:italic; font-size:13px;}
+
+/* ====== 03 CLASSES ====== */
+.classes{}
+.classes-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.class-card{
+  background: var(--paper);
+  padding: 38px 36px;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:18px;
+  position:relative;
+  transition: background .5s;
+}
+.class-card:hover{ background: var(--ivory); }
+.class-card .top{
+  display:flex; justify-content:space-between; align-items:flex-start; gap:20px;
+}
+.class-card .num{
+  font-family:var(--display); font-style:italic; font-weight:300;
+  color:var(--bronze-deep);
+  font-size:15px;
+}
+.class-card .price{
+  text-align:right;
+  font-family:var(--display); font-style:italic; font-weight:300;
+  color:var(--ink);
+  font-size:28px;
+  line-height:1;
+}
+.class-card .price small{
+  display:block;
+  font-family:var(--sans); font-size:10px; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--mute); margin-top:6px;
+}
+.class-card h3{
+  font-family:var(--display-jp); font-weight:600;
+  font-size: 26px;
+  margin:6px 0 0;
+  letter-spacing:.005em;
+}
+.class-card h3 .en{
+  display:block;
+  font-family:var(--display); font-style:italic; font-weight:300;
+  color:var(--bronze-deep); font-size:13px; margin-bottom:6px;
+}
+.class-card .desc{
+  color:var(--ink-soft); font-size:13.5px; line-height:1.95; margin:6px 0 14px;
+}
+.class-card .meta{
+  display:flex; gap:24px; flex-wrap:wrap;
+  font-family:var(--sans); font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--mute);
+  border-top:1px solid var(--line); padding-top:18px; margin-top:auto;
+}
+.class-card .meta b{
+  color:var(--ink); font-weight:500;
+}
+.class-card .corner{
+  position:absolute; top:0; right:0;
+  width:42px; height:42px;
+  background: var(--bronze);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  opacity:0; transition: opacity .4s;
+}
+.class-card:hover .corner{opacity:.85}
+
+/* ====== 04 PRICING ====== */
+.pricing{ background: var(--paper-2); position:relative; overflow:hidden}
+.pricing::before{
+  content:"";
+  position:absolute;
+  right:-200px; top:-200px;
+  width:600px; height:600px; border-radius:50%;
+  border:1px solid var(--line);
+  opacity:.6;
+}
+.pricing::after{
+  content:"";
+  position:absolute;
+  right:-100px; top:-100px;
+  width:400px; height:400px; border-radius:50%;
+  border:1px solid var(--line-soft);
+  opacity:.5;
+}
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:60px;
+  align-items:start;
+}
+.price-table{
+  background: var(--ivory);
+  border:1px solid var(--line);
+}
+.price-table .head{
+  padding:22px 28px;
+  border-bottom:1px solid var(--line);
+  display:flex; justify-content:space-between; align-items:baseline;
+}
+.price-table .head h4{
+  font-family:var(--display-jp); font-weight:600; font-size:19px; margin:0;
+}
+.price-table .head .tag{
+  font-family:var(--display); font-style:italic; font-weight:300; color:var(--bronze-deep); font-size:13px;
+}
+.price-row{
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:16px 28px;
+  border-bottom:1px solid rgba(207,195,173,.6);
+  font-size:14px;
+}
+.price-row:last-child{border-bottom:0}
+.price-row .l{color:var(--ink-soft)}
+.price-row .r{
+  font-family:var(--display); font-style:italic; font-weight:300; font-size:22px; color:var(--ink);
+}
+.price-row .r small{
+  font-family:var(--sans); font-style:normal; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--mute); margin-left:4px;
+}
+
+.price-feat{
+  padding:36px;
+  background:var(--ink); color:var(--paper);
+  display:flex; flex-direction:column; justify-content:space-between;
+  min-height:380px;
+}
+.price-feat .top{
+  display:flex; justify-content:space-between; align-items:flex-start;
+  margin-bottom:32px;
+}
+.price-feat h4{
+  font-family:var(--display-jp); font-weight:500;
+  font-size:32px;
+  margin:0; line-height:1.2;
+}
+.price-feat h4 .en{
+  display:block; font-family:var(--display); font-style:italic; font-weight:300;
+  color:var(--bronze); font-size:14px; margin-bottom:8px;
+}
+.price-feat .price{
+  font-family:var(--display); font-style:italic; font-weight:300;
+  font-size:64px; line-height:1; color:var(--paper);
+}
+.price-feat .price small{
+  display:block; font-family:var(--sans); font-style:normal; font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:#a89a83; margin-top:8px;
+}
+.price-feat .desc{ color:#cdbfa9; line-height:2.0; font-size:14px; margin:0 0 28px;}
+.price-feat .pf-meta{
+  display:flex; gap:30px; flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,.18);
+  padding-top:22px;
+  font-family:var(--sans); font-size:10.5px; letter-spacing:.24em; text-transform:uppercase; color:#a89a83;
+}
+.price-feat .pf-meta b{color:var(--paper); font-weight:500;}
+.price-notes{
+  margin-top:32px;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+}
+.note{
+  border-top:1px solid var(--line);
+  padding-top:14px;
+}
+.note .k{
+  font-family:var(--display); font-style:italic; font-weight:300; font-size:13px; color:var(--bronze-deep); margin-bottom:6px;
+}
+.note .v{ font-size:13px; color:var(--ink-soft); line-height:1.7;}
+
+/* ====== 05 RESERVE ====== */
+.reserve-grid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap:60px;
+  align-items:center;
+}
+.reserve-text h3{
+  font-family:var(--display-jp); font-weight:500;
+  font-size: clamp(30px, 3.6vw, 48px);
+  line-height:1.3; margin:0 0 22px;
+}
+.reserve-text h3 .it{
+  font-family:var(--display); font-style:italic; font-weight:300; color:var(--bronze-deep);
+}
+.reserve-text p{
+  color:var(--ink-soft); line-height:2.0; max-width:520px;
+}
+.reserve-actions{
+  display:flex; flex-direction:column; gap:14px;
+  margin-top:28px;
+  max-width:340px;
+}
+.reserve-actions .btn{justify-content:space-between; padding:18px 26px}
+.reserve-card{
+  border:1px solid var(--line);
+  background: var(--ivory);
+  padding:38px;
+  position:relative;
+}
+.reserve-card .stamp{
+  position:absolute; top:-20px; right:30px;
+  background: var(--bronze);
+  color:var(--ivory);
+  padding:8px 14px;
+  font-family:var(--sans); font-size:10px; letter-spacing:.32em; text-transform:uppercase;
+}
+.reserve-card h4{
+  font-family:var(--display-jp); font-weight:600;
+  font-size:22px; margin:0 0 16px;
+}
+.schedule{
+  display:grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap:8px;
+  margin: 18px 0 24px;
+}
+.schedule .day{
+  text-align:center;
+  padding:16px 0;
+  border:1px solid var(--line-soft);
+  background:var(--paper);
+  font-family:var(--sans);
+  font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--mute);
+  position:relative;
+}
+.schedule .day.open{
+  background:var(--ink); color:var(--paper); border-color:var(--ink);
+}
+.schedule .day .d{
+  display:block;
+  font-family:var(--display); font-style:italic; font-weight:300;
+  font-size:18px; color:inherit; margin-top:4px; text-transform:none; letter-spacing:0;
+}
+.schedule .day.open .d{color:var(--bronze)}
+.reserve-meta{
+  display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+  border-top:1px solid var(--line);
+  padding-top:18px;
+  font-size:12.5px; color:var(--ink-soft);
+}
+.reserve-meta b{ color:var(--ink); font-weight:500;}
+
+/* ====== 06 MAP ====== */
+.map-section{ background: var(--ink); color:var(--paper); position:relative; overflow:hidden;}
+.map-section .sec-num{ color: var(--bronze); }
+.map-section .sec-num small{ color:#a89a83 }
+.map-section .sec-title{ color: var(--paper); }
+.map-section .sec-title .en{ color: var(--bronze); }
+.map-section .sec-lede{ color: #cdbfa9; }
+
+.map-grid{
+  display:grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap:60px;
+  align-items:stretch;
+}
+.map-info{ padding:8px 0;}
+.map-info .row{
+  border-top:1px solid rgba(255,255,255,.12);
+  padding:22px 0;
+  display:grid; grid-template-columns: 90px 1fr; gap:12px;
+}
+.map-info .row:last-child{border-bottom:1px solid rgba(255,255,255,.12)}
+.map-info .row .k{
+  font-family:var(--display); font-style:italic; font-weight:300; color:var(--bronze); font-size:14px;
+}
+.map-info .row .v{ color:#dccdb1; line-height:1.85; font-size:14px;}
+.map-info .row .v b{ color:var(--paper); font-weight:500;}
+
+.map-frame{
+  background:#fbf7ee;
+  border:1px solid rgba(255,255,255,.1);
+  min-height: 540px;
+  height: 100%;
+  overflow:hidden;
+  position:relative;
+}
+.map-frame img{
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position: center center;
+  display:block;
+}
+@media (max-width: 1024px){
+  .map-frame{ aspect-ratio: 878/680; height:auto; min-height:0;}
+}
+.map-frame .corner-tag{
+  position:absolute;
+  top:18px; left:18px;
+  background: var(--ink); color: var(--bronze);
+  padding:8px 14px;
+  font-family:var(--sans); font-size:10px; letter-spacing:.3em; text-transform:uppercase;
+  border:1px solid var(--bronze);
+  z-index:2;
+}
+.map-frame .corner-credit{
+  position:absolute;
+  bottom:14px; right:14px;
+  background: rgba(28,24,19,.65);
+  color: var(--paper);
+  padding:6px 12px;
+  font-family:var(--display); font-style:italic; font-weight:300; font-size:11px;
+  backdrop-filter: blur(6px);
+  z-index:2;
+}
+.map-actions{
+  display:flex; gap:10px; flex-wrap:wrap;
+  margin-top:18px;
+}
+.map-actions .btn{ font-size:10.5px; padding:11px 18px; }
+
+/* ====== 07 GALLERY ====== */
+.gallery{}
+.gallery-grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 100px;
+  gap:14px;
+}
+.gphoto{
+  overflow:hidden;
+  position:relative;
+  background:#d8cdb8;
+}
+.gphoto img{
+  width:100%; height:100%; object-fit:cover;
+  filter:contrast(1.02) saturate(.92);
+  transition:transform 1.2s cubic-bezier(.2,.6,.2,1);
+}
+.gphoto:hover img{ transform:scale(1.05); }
+.gphoto .cap{
+  position:absolute; left:14px; bottom:12px;
+  font-family:var(--display); font-style:italic; font-weight:300;
+  font-size:12px; color:var(--paper);
+  background: rgba(28,24,19,.55);
+  padding:5px 10px;
+  letter-spacing:.04em;
+  backdrop-filter: blur(6px);
+}
+.g1{ grid-column: span 5; grid-row: span 4;}
+.g2{ grid-column: span 4; grid-row: span 3;}
+.g3{ grid-column: span 3; grid-row: span 3;}
+.g4{ grid-column: span 4; grid-row: span 3;}
+.g5{ grid-column: span 3; grid-row: span 4;}
+.g6{ grid-column: span 5; grid-row: span 3;}
+
+/* ====== 08 CONTACT ====== */
+.contact{ background: var(--paper-2); position:relative; }
+.contact-grid{
+  display:grid; grid-template-columns: 1fr 1fr; gap:80px; align-items:start;
+}
+.contact-text h3{
+  font-family:var(--display-jp); font-weight:500;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height:1.25;
+  margin:0 0 20px;
+}
+.contact-text h3 .it{
+  font-family:var(--display); font-style:italic; font-weight:300; color:var(--bronze-deep);
+}
+.contact-text p{ color:var(--ink-soft); line-height:2.0; max-width:480px; margin-bottom:30px;}
+
+.contact-channels{
+  display:flex; flex-direction:column; gap:12px;
+}
+.channel{
+  display:grid;
+  grid-template-columns: auto 1fr auto;
+  gap:18px;
+  align-items:center;
+  background:var(--ivory);
+  padding:22px 26px;
+  border:1px solid var(--line);
+  transition: border-color .35s, transform .35s;
+}
+.channel:hover{ border-color:var(--bronze); transform: translateX(4px);}
+.channel .ico{
+  width:42px; height:42px; border-radius:50%;
+  background: var(--ink); color:var(--bronze);
+  display:grid; place-items:center;
+  font-family:var(--display); font-style:italic; font-size:18px;
+}
+.channel .ck{
+  font-family:var(--display); font-style:italic; font-weight:300;
+  color:var(--bronze-deep); font-size:13px; margin-bottom:4px;
+}
+.channel .cv{ font-family:var(--display-jp); font-weight:500; font-size:16px;}
+.channel .arr{
+  width:18px; height:1px; background:var(--ink); position:relative;
+}
+.channel .arr::after{
+  content:""; position:absolute; right:0; top:-3.5px;
+  width:8px; height:8px; border-top:1px solid var(--ink); border-right:1px solid var(--ink);
+  transform:rotate(45deg);
+}
+
+.contact-form{
+  background: var(--ivory);
+  padding:36px;
+  border:1px solid var(--line);
+}
+.contact-form .row{
+  display:flex; flex-direction:column; gap:8px; margin-bottom:18px;
+}
+.contact-form label{
+  font-family:var(--sans); font-size:10.5px; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--mute);
+}
+.contact-form input,
+.contact-form textarea,
+.contact-form select{
+  background:transparent;
+  border:0;
+  border-bottom:1px solid var(--line);
+  padding:10px 0;
+  font-family:var(--sans-jp);
+  font-size:14.5px;
+  color:var(--ink);
+  outline:none;
+  transition:border-color .3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus{ border-color:var(--ink); }
+.contact-form textarea{ resize:vertical; min-height:90px;}
+.contact-form .submit{
+  margin-top:14px;
+  width:100%;
+  display:flex; justify-content:space-between; align-items:center;
+  background:var(--ink); color:var(--paper);
+  padding:18px 22px;
+  font-family:var(--sans); font-size:11px; letter-spacing:.3em; text-transform:uppercase;
+  border:0; cursor:pointer;
+  transition: background .35s;
+}
+.contact-form .submit:hover{ background: var(--bronze-deep);}
+
+/* ====== FOOTER ====== */
+footer{
+  background:var(--ink); color: #cdbfa9;
+  padding: 80px 0 40px;
+  position:relative; overflow:hidden;
+}
+.footer-top{
+  display:grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap:48px;
+  align-items:start;
+  padding-bottom:60px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.footer-top .brand .name{ color:var(--paper); font-size:34px;}
+.footer-top .brand .sub{ color:#a89a83;}
+.footer-top p{ font-size:13px; line-height:1.9; margin-top:18px;}
+.footer-top h5{
+  font-family:var(--display); font-style:italic; font-weight:300;
+  color:var(--bronze); font-size:14px; margin:0 0 18px;
+}
+.footer-top ul{ list-style:none; padding:0; margin:0;}
+.footer-top li{ margin-bottom:10px;}
+.footer-top li a{
+  font-size:13px; color:#cdbfa9;
+  transition: color .3s;
+  position:relative;
+  padding-left:18px;
+}
+.footer-top li a::before{
+  content:""; position:absolute; left:0; top:9px;
+  width:8px; height:1px; background:var(--bronze);
+  transition:width .3s;
+}
+.footer-top li a:hover{ color:var(--paper);}
+.footer-top li a:hover::before{ width:14px;}
+.giant{
+  font-family:var(--display); font-style:italic; font-weight:300;
+  font-size: clamp(80px, 18vw, 280px);
+  line-height:.85;
+  color: rgba(156,122,75,.08);
+  text-align:center;
+  margin: 80px -10% -90px;
+  letter-spacing:-.04em;
+  pointer-events:none;
+  user-select:none;
+}
+.footer-bottom{
+  margin-top: 40px;
+  padding-top: 30px;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+  font-family:var(--sans); font-size:10.5px; letter-spacing:.28em; text-transform:uppercase; color:#7e6e57;
+  position:relative; z-index:2;
+}
+.footer-bottom a{ color:#7e6e57; transition:color .3s;}
+.footer-bottom a:hover{color:var(--paper);}
+.footer-bottom .links{display:flex; gap:24px;}
+
+/* ====== ANIMATION ====== */
+[data-reveal]{ opacity:0; transform: translateY(20px); transition: opacity 1.1s cubic-bezier(.2,.6,.2,1), transform 1.1s cubic-bezier(.2,.6,.2,1);}
+[data-reveal].in{ opacity:1; transform: translateY(0);}
+[data-reveal-delay="1"].in{ transition-delay:.08s;}
+[data-reveal-delay="2"].in{ transition-delay:.16s;}
+[data-reveal-delay="3"].in{ transition-delay:.24s;}
+[data-reveal-delay="4"].in{ transition-delay:.32s;}
+[data-reveal-delay="5"].in{ transition-delay:.40s;}
+[data-reveal-delay="6"].in{ transition-delay:.48s;}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px){
+  .hero-grid{ grid-template-columns: 1fr; gap:40px;}
+  .hero-photo{ aspect-ratio: 4/5; max-height: 70vh;}
+  .pilates-grid, .philosophy, .instructor, .reserve-grid, .map-grid, .contact-grid{
+    grid-template-columns: 1fr; gap:48px;
+  }
+  .pilates-text{position:static;}
+  .pricing-grid{grid-template-columns:1fr; gap:24px;}
+  .price-notes{grid-template-columns:1fr;}
+  .classes-grid{grid-template-columns:1fr;}
+  .section-head{ grid-template-columns:1fr; gap:18px; align-items:start;}
+  .footer-top{ grid-template-columns: 1fr 1fr; gap:36px;}
+  .gallery-grid{ grid-template-columns: repeat(6, 1fr);}
+  .g1,.g2,.g3,.g4,.g5,.g6{ grid-column: span 3; grid-row: span 3;}
+}
+@media (max-width: 720px){
+  .nav, .header-cta .btn:not(.solid){display:none;}
+  .header-inner{ grid-template-columns: 1fr auto; gap:14px;}
+  .hero-bottom{ grid-template-columns: 1fr 1fr; gap:18px;}
+  .principles{grid-template-columns:1fr;}
+  .schedule{grid-template-columns: repeat(7, 1fr); gap:4px;}
+  .schedule .day{ padding:8px 0; font-size:9px;}
+  .schedule .day .d{ font-size:14px;}
+  .footer-top{ grid-template-columns: 1fr;}
+  .gallery-grid{ grid-template-columns: repeat(2, 1fr); grid-auto-rows: 140px;}
+  .g1,.g2,.g3,.g4,.g5,.g6{ grid-column: span 1; grid-row: span 2;}
+  .g1{grid-row: span 3;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="2" fill="#9c7a4b"/></svg> Odawara Pilates &amp; Community Salon</span>
+    <span>Est. 2024 — Hamacho, Odawara</span>
+    <span><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="2" fill="#9c7a4b"/></svg> Pilates × Conditioning × Beauty</span>
+    <span>For Women, Aging Beautifully</span>
+    <span><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="2" fill="#9c7a4b"/></svg> 完全予約制 / By Appointment</span>
+    <span>PMA® Certified Instructor</span>
+    <!-- repeat for seamless -->
+    <span><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="2" fill="#9c7a4b"/></svg> Odawara Pilates &amp; Community Salon</span>
+    <span>Est. 2024 — Hamacho, Odawara</span>
+    <span><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="2" fill="#9c7a4b"/></svg> Pilates × Conditioning × Beauty</span>
+    <span>For Women, Aging Beautifully</span>
+    <span><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="2" fill="#9c7a4b"/></svg> 完全予約制 / By Appointment</span>
+    <span>PMA® Certified Instructor</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="wrap header-inner">
+    <a href="#home" class="brand">
+      <span class="name">Wellbena</span>
+      <span class="sub">Odawara · Pilates Studio</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#home"><span class="en">Home</span>HOME</a>
+      <a href="#pilates"><span class="en">About Pilates</span>ピラティスとは</a>
+      <a href="#wellbena"><span class="en">The Studio</span>Wellbena</a>
+      <a href="#classes"><span class="en">Classes</span>クラス</a>
+      <a href="#pricing"><span class="en">Pricing</span>料金</a>
+      <a href="#reserve"><span class="en">Reserve</span>予約</a>
+      <a href="#map"><span class="en">Map</span>MAP</a>
+      <a href="#gallery"><span class="en">Gallery</span>ギャラリー</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#contact" class="btn">Contact <span class="arrow"></span></a>
+      <a href="#reserve" class="btn solid">体験予約 <span class="arrow"></span></a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO / HOME -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-meta" data-reveal>
+          <span class="num">— 01 / 09</span>
+          <span class="line"></span>
+          <span class="eyebrow"><span class="dot"></span>Odawara, Kanagawa</span>
+        </div>
+        <h1 data-reveal data-reveal-delay="1">
+          美しく、<br/>
+          <span class="it">しなやかに</span>。
+          <span class="small">A studio for women aging with grace.</span>
+        </h1>
+        <p class="hero-lede" data-reveal data-reveal-delay="2">
+          Wellbena は、ピラティス × コンディショニング × 美容の三本柱で、
+          女性が自分らしく、健やかに歳を重ねていくためのプライベートスタジオです。
+          少人数制・完全予約制の落ち着いた空間で、身体と向き合う時間を。
+        </p>
+        <div class="hero-actions" data-reveal data-reveal-delay="3">
+          <a href="#reserve" class="btn solid">体験レッスン予約 <span class="arrow"></span></a>
+          <a href="#pilates" class="btn">ピラティスとは <span class="arrow"></span></a>
+        </div>
+      </div>
+
+      <div class="hero-photo" data-reveal data-reveal-delay="2">
+        <img src="assets/portrait_20260505-040252_00_0.jpg" alt="Wellbena 少人数制マットピラティスレッスンの様子" />
+        <div class="photo-tag">
+          <span>Personal · 丁寧な指導</span>
+          <span class="it">Hamacho · 浜町</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-bottom" data-reveal data-reveal-delay="4">
+      <div class="stat">
+        <span class="k">Six</span>
+        <span class="v">Core Principles</span>
+      </div>
+      <span style="height:1px;background:var(--line)"></span>
+      <div class="stat">
+        <span class="k">¥1,500</span>
+        <span class="v">Trial / 体験レッスン</span>
+      </div>
+      <div class="scroll">Scroll <span class="ln"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 ピラティスとは -->
+<section class="section pilates" id="pilates">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-num" data-reveal>01<small>What is Pilates</small></div>
+      <div>
+        <h2 class="sec-title" data-reveal data-reveal-delay="1">
+          <span class="en">— About Pilates</span>
+          身体と向き合う、<br/>百年のメソッド。
+        </h2>
+        <p class="sec-lede" data-reveal data-reveal-delay="2">
+          ジョセフ・ピラティスが1883年にドイツで生まれ、第一次世界大戦の収容所で考案した
+          「コントロロジー」。1926年にニューヨークで体系化されて以来、
+          世界中で姿勢・呼吸・身体機能の根本的な改善に用いられています。
+        </p>
+      </div>
+    </div>
+
+    <div class="pilates-grid">
+      <div class="pilates-text">
+        <p data-reveal>
+          Wellbena では、ジョセフ・ピラティスのオリジナルマットエクササイズを忠実に行う
+          <b>クラシカルマットピラティス</b>を中心に、現代の身体に合わせて丁寧に指導します。
+        </p>
+        <p data-reveal data-reveal-delay="1">
+          鍛えるのではなく、整える。負荷をかけるのではなく、軸を取り戻す。
+          ピラティスは、続けるほどに身体の声が聞こえるようになるメソッドです。
+        </p>
+        <blockquote class="quote" data-reveal data-reveal-delay="2">
+          “In 10 sessions you will feel the difference. <br/>
+          In 20 you will see the difference. <br/>
+          In 30 you'll have a whole new body.”<br/>
+          <span style="font-size:13px; color:var(--mute); font-style:normal; letter-spacing:.04em">— Joseph H. Pilates</span>
+        </blockquote>
+
+        <div class="founder-card" data-reveal data-reveal-delay="3">
+          <div class="badge">JP</div>
+          <div>
+            <div class="who">Joseph H. Pilates / 1883–1967</div>
+            <div class="what">ドイツ生まれ。1926年NYにて初のスタジオを設立。<br/>「コントロロジー」の創始者。</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow" style="margin-bottom:18px"><span class="dot"></span>Six Core Principles · 六つの基本原則</div>
+        <div class="principles">
+          <div class="principle" data-reveal>
+            <span class="pn">— I.</span>
+            <div class="pt">体のコントロール</div>
+            <div class="pd">Concentration & Control. 一つひとつの動きに意識を向ける。</div>
+          </div>
+          <div class="principle" data-reveal data-reveal-delay="1">
+            <span class="pn">— II.</span>
+            <div class="pt">呼吸</div>
+            <div class="pd">Breath. 胸式呼吸で深層筋を目覚めさせる。</div>
+          </div>
+          <div class="principle" data-reveal data-reveal-delay="2">
+            <span class="pn">— III.</span>
+            <div class="pt">集中</div>
+            <div class="pd">Focus. 心と身体を、いまこの瞬間に。</div>
+          </div>
+          <div class="principle" data-reveal data-reveal-delay="3">
+            <span class="pn">— IV.</span>
+            <div class="pt">中心化</div>
+            <div class="pd">Centering. 身体の中心 — コアから動きを生む。</div>
+          </div>
+          <div class="principle" data-reveal data-reveal-delay="4">
+            <span class="pn">— V.</span>
+            <div class="pt">精度</div>
+            <div class="pd">Precision. アライメントと正しい配置を大切に。</div>
+          </div>
+          <div class="principle" data-reveal data-reveal-delay="5">
+            <span class="pn">— VI.</span>
+            <div class="pt">流れ</div>
+            <div class="pd">Flow. 一連の動きを、なめらかに連ねていく。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 WELLBENA -->
+<section class="section wellbena" id="wellbena">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-num" data-reveal>02<small>The Studio</small></div>
+      <div>
+        <h2 class="sec-title" data-reveal data-reveal-delay="1">
+          <span class="en">— Wellbena Means</span>
+          “元気で しあわせに、<br/>あなたらしい毎日を。”
+        </h2>
+        <p class="sec-lede" data-reveal data-reveal-delay="2">
+          Wellbena (ウェルビナ) は、Well be（元気に幸せ）と na を組み合わせた造語。
+          一人ひとりの「あなたらしい毎日」を支えたい、という願いを込めています。
+        </p>
+      </div>
+    </div>
+
+    <div class="philosophy">
+      <div data-reveal>
+        <h3>
+          女性が美しく、<br/>
+          <span class="it">しなやかに</span>、<br/>
+          エイジング世代を送るために。
+        </h3>
+        <p>
+          ピラティス・コンディショニング・美容の三つを軸に、
+          姿勢改善レッスン、ボディメイク3ヶ月プログラムと栄養指導、
+          ビューティーアドバイザー相談までトータルでサポートします。
+        </p>
+        <p>
+          完全予約制・少人数制。基本的に女性専用のスタジオです
+          （メンズはご紹介制でパーソナルレッスンのみ受付しております）。
+        </p>
+      </div>
+
+      <div class="pillars" data-reveal data-reveal-delay="1">
+        <div class="pillar">
+          <span class="num">— 01</span>
+          <div>
+            <div class="title-jp">Pilates / ピラティス</div>
+            <div class="title-en">Classical mat &amp; conditioning</div>
+          </div>
+          <span class="icon">P</span>
+        </div>
+        <div class="pillar">
+          <span class="num">— 02</span>
+          <div>
+            <div class="title-jp">Conditioning / コンディショニング</div>
+            <div class="title-en">Body-making · 3-month program</div>
+          </div>
+          <span class="icon">C</span>
+        </div>
+        <div class="pillar">
+          <span class="num">— 03</span>
+          <div>
+            <div class="title-jp">Beauty / 美容</div>
+            <div class="title-en">Nutrition &amp; beauty advisory</div>
+          </div>
+          <span class="icon">B</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="instructor">
+      <div class="instructor-photo" data-reveal>
+        <img src="assets/portrait_20260505-025246_00_0.jpg" alt="インストラクター 蛯名さおり"/>
+      </div>
+      <div class="instructor-info" data-reveal data-reveal-delay="1">
+        <div class="ins-eyebrow eyebrow"><span class="dot"></span>Instructor / 講師紹介</div>
+        <h4>
+          蛯名 さおり
+          <small>Saori Ebina · Founder &amp; Instructor</small>
+        </h4>
+        <p class="bio">
+          ピラティスとの出会いをきっかけに、自身の身体の不調と真摯に向き合うことを学び、
+          そのメソッドの素晴らしさを一人でも多くの方へ届けたいという想いから Wellbena を立ち上げました。
+        </p>
+        <ul class="creds">
+          <li><span>PMA®認定 国際ピラティスインストラクター</span><span class="num">01</span></li>
+          <li><span>パーソナルトレーナー</span><span class="num">02</span></li>
+          <li><span>ダイエットインストラクター</span><span class="num">03</span></li>
+          <li><span>ビューティーアドバイザー</span><span class="num">04</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 CLASSES -->
+<section class="section classes" id="classes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-num" data-reveal>03<small>Our Classes</small></div>
+      <div>
+        <h2 class="sec-title" data-reveal data-reveal-delay="1">
+          <span class="en">— Programs</span>
+          目的に合わせて、<br/>四つのプログラム。
+        </h2>
+        <p class="sec-lede" data-reveal data-reveal-delay="2">
+          初めての方からじっくり改善したい方まで。
+          少人数・完全予約制で、お一人おひとりに丁寧に向き合います。
+          全クラス60分、水・木・金・土曜日に開催。
+        </p>
+      </div>
+    </div>
+
+    <div class="classes-grid">
+      <div class="class-card" data-reveal>
+        <span class="corner"></span>
+        <div class="top">
+          <span class="num">— 01 / Personal</span>
+          <div class="price">¥5,500<small>per session</small></div>
+        </div>
+        <h3>
+          <span class="en">Personal Lesson</span>
+          パーソナルレッスン
+        </h3>
+        <p class="desc">
+          マンツーマンの完全個別レッスン。改善のスピードを高めたい方、
+          初めての体験で丁寧に教えてほしい方におすすめです。
+        </p>
+        <div class="meta">
+          <span><b>60</b> min</span>
+          <span><b>1</b> 名 限定</span>
+          <span><b>水・木・金・土</b></span>
+        </div>
+      </div>
+
+      <div class="class-card" data-reveal data-reveal-delay="1">
+        <span class="corner"></span>
+        <div class="top">
+          <span class="num">— 02 / Group</span>
+          <div class="price">¥500–3,500<small>monthly tier</small></div>
+        </div>
+        <h3>
+          <span class="en">Mat Pilates Group</span>
+          マットピラティス グループレッスン
+        </h3>
+        <p class="desc">
+          最大5名までの少人数制（2名以上で開催）。基礎を大切にした
+          カリキュラムで、無理なく続けられるグループクラスです。
+        </p>
+        <div class="meta">
+          <span><b>60</b> min</span>
+          <span>最大 <b>5</b> 名</span>
+          <span><b>水・木・金・土</b></span>
+        </div>
+      </div>
+
+      <div class="class-card" data-reveal data-reveal-delay="2">
+        <span class="corner"></span>
+        <div class="top">
+          <span class="num">— 03 / Semi-Private</span>
+          <div class="price">¥3,500<small>per person</small></div>
+        </div>
+        <h3>
+          <span class="en">Semi-Private Lesson</span>
+          セミプライベートレッスン
+        </h3>
+        <p class="desc">
+          2〜3名のセミプライベート枠。ご友人やご家族と一緒に、
+          リラックスした空気のなかで受講していただけます。
+        </p>
+        <div class="meta">
+          <span><b>60</b> min</span>
+          <span><b>2–3</b> 名</span>
+          <span>ご予約制</span>
+        </div>
+      </div>
+
+      <div class="class-card" data-reveal data-reveal-delay="3">
+        <span class="corner"></span>
+        <div class="top">
+          <span class="num">— 04 / Trial</span>
+          <div class="price">¥1,500<small>first time</small></div>
+        </div>
+        <h3>
+          <span class="en">Trial Group Class</span>
+          体験グループレッスン
+        </h3>
+        <p class="desc">
+          初めて当店のグループレッスンをご利用される方のための体験枠。
+          まずは Wellbena の空気感に触れていただけます。
+        </p>
+        <div class="meta">
+          <span><b>60</b> min</span>
+          <span>初回限定</span>
+          <span><b>水・木・金・土</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 PRICING -->
+<section class="section pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-num" data-reveal>04<small>Pricing</small></div>
+      <div>
+        <h2 class="sec-title" data-reveal data-reveal-delay="1">
+          <span class="en">— Fees</span>
+          続けるほど、<br/>やさしい料金体系。
+        </h2>
+        <p class="sec-lede" data-reveal data-reveal-delay="2">
+          入会金は不要。月内のグループレッスン受講回数が多いほど、
+          1回あたりのご負担が軽くなる体系です。
+        </p>
+      </div>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-feat" data-reveal>
+        <div class="top">
+          <h4>
+            <span class="en">— Personal Lesson</span>
+            パーソナル<br/>レッスン
+          </h4>
+          <div class="price">¥5,500<small>/ 60 min</small></div>
+        </div>
+        <p class="desc">
+          完全マンツーマン。お身体の状態に合わせ、
+          姿勢・呼吸・動きの質を一つひとつ整えていく
+          Wellbena のフラッグシップレッスンです。
+        </p>
+        <div class="pf-meta">
+          <span>入会金 <b>無料</b></span>
+          <span>支払い <b>PayPay / 現金</b></span>
+        </div>
+      </div>
+
+      <div data-reveal data-reveal-delay="1">
+        <div class="price-table">
+          <div class="head">
+            <h4>マットピラティス・グループ月額</h4>
+            <span class="tag">— Group · Monthly</span>
+          </div>
+          <div class="price-row"><span class="l">月内 1 回目</span><span class="r">¥3,500</span></div>
+          <div class="price-row"><span class="l">月内 2 回目</span><span class="r">¥2,000</span></div>
+          <div class="price-row"><span class="l">月内 3 回目</span><span class="r">¥1,500</span></div>
+          <div class="price-row"><span class="l">月内 4 回目</span><span class="r">¥1,000</span></div>
+          <div class="price-row"><span class="l">月内 5 回目</span><span class="r">¥500</span></div>
+          <div class="price-row"><span class="l">月内 6 回目以降</span><span class="r">¥1,500</span></div>
+        </div>
+
+        <div class="price-table" style="margin-top:18px">
+          <div class="head">
+            <h4>その他のプラン</h4>
+            <span class="tag">— Other</span>
+          </div>
+          <div class="price-row"><span class="l">セミプライベート（60分・1名様）</span><span class="r">¥3,500</span></div>
+          <div class="price-row"><span class="l">体験グループレッスン（60分）</span><span class="r">¥1,500</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-notes" data-reveal data-reveal-delay="2">
+      <div class="note">
+        <div class="k">— Note 01</div>
+        <div class="v">入会金・年会費は一切いただきません。</div>
+      </div>
+      <div class="note">
+        <div class="k">— Note 02</div>
+        <div class="v">グループレッスンは2名以上で開催。最大5名まで。</div>
+      </div>
+      <div class="note">
+        <div class="k">— Note 03</div>
+        <div class="v">お支払いは PayPay または 現金（おつりのないようお願いいたします）。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 RESERVE -->
+<section class="section" id="reserve">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-num" data-reveal>05<small>Reserve</small></div>
+      <div>
+        <h2 class="sec-title" data-reveal data-reveal-delay="1">
+          <span class="en">— Booking</span>
+          完全予約制 / By Appointment.
+        </h2>
+        <p class="sec-lede" data-reveal data-reveal-delay="2">
+          ご予約は LINE またはお問い合わせフォームより承っております。
+          最新のスケジュールは公式 LINE でご確認ください。
+        </p>
+      </div>
+    </div>
+
+    <div class="reserve-grid">
+      <div class="reserve-text" data-reveal>
+        <h3>
+          ご予約は、<br/>
+          <span class="it">LINE</span> から<br/>かんたんに。
+        </h3>
+        <p>
+          初めての方は、まず <b>体験グループレッスン (¥1,500)</b> または
+          <b>パーソナルレッスン (¥5,500)</b> がおすすめです。
+          公式 LINE にて、ご希望の日時をお知らせください。
+        </p>
+        <div class="reserve-actions">
+          <a href="#" class="btn solid">LINEで予約する <span class="arrow"></span></a>
+          <a href="#contact" class="btn">フォームでお問い合わせ <span class="arrow"></span></a>
+        </div>
+      </div>
+
+      <div class="reserve-card" data-reveal data-reveal-delay="1">
+        <span class="stamp">Open Days</span>
+        <h4>レッスン開催日</h4>
+        <p style="font-size:13px;color:var(--ink-soft); margin:0 0 8px">
+          毎週 <b>水・木・金・土</b> に開催 (祝祭日はカレンダーをご確認ください)
+        </p>
+        <div class="schedule">
+          <div class="day"><span class="d">日</span>SUN</div>
+          <div class="day"><span class="d">月</span>MON</div>
+          <div class="day"><span class="d">火</span>TUE</div>
+          <div class="day open"><span class="d">水</span>WED</div>
+          <div class="day open"><span class="d">木</span>THU</div>
+          <div class="day open"><span class="d">金</span>FRI</div>
+          <div class="day open"><span class="d">土</span>SAT</div>
+        </div>
+        <div class="reserve-meta">
+          <span>営業 <b>10:00 – 19:00</b></span>
+          <span>予約 <b>完全予約制</b></span>
+          <span>支払い <b>PayPay / 現金</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 MAP -->
+<section class="section map-section" id="map">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-num" data-reveal>06<small>Map &amp; Access</small></div>
+      <div>
+        <h2 class="sec-title" data-reveal data-reveal-delay="1">
+          <span class="en">— Location</span>
+          小田原・浜町。<br/>潮風と日射しの届く場所で。
+        </h2>
+        <p class="sec-lede" data-reveal data-reveal-delay="2">
+          スタジオは小田原市浜町、リーカル小田原 1 階。
+          秋季は屋上スペースでのレッスンも開催しています。
+        </p>
+      </div>
+    </div>
+
+    <div class="map-grid">
+      <div class="map-info" data-reveal>
+        <div class="row"><span class="k">— Studio</span><span class="v"><b>Wellbena Pilates Studio</b><br/>小田原ピラティス＆コミュニティサロン</span></div>
+        <div class="row"><span class="k">— Address</span><span class="v">神奈川県小田原市浜町<br/><b>3-11-41 リーカル小田原 1階</b><br/>＋ 屋上 (秋のみ)</span></div>
+        <div class="row"><span class="k">— Landmark</span><span class="v">国道1号線沿い・<b>ロイヤルホスト横</b></span></div>
+        <div class="row"><span class="k">— Access</span><span class="v">JR / 小田急「小田原駅」より<br/>徒歩 <b>約15分</b> / バス <b>約5分</b><br/>(国府津線「青物町」下車)</span></div>
+        <div class="row"><span class="k">— Parking</span><span class="v">専用駐車場 <b>4台</b><br/>(詳細は予約確認メールにてご案内)</span></div>
+        <div class="row"><span class="k">— Entry</span><span class="v">国道側ではなく<br/><b>マンションエントランスのインターホン「101」</b>を押してください</span></div>
+        <div class="row"><span class="k">— Hours</span><span class="v">水・木・金・土曜日<br/>10:00 – 19:00 (完全予約制)</span></div>
+        <div class="map-actions">
+          <a href="https://www.google.com/maps/search/?api=1&query=神奈川県小田原市浜町3-11-41" target="_blank" rel="noopener" class="btn" style="border-color:rgba(255,255,255,.4); color:var(--paper)">Google Maps で開く <span class="arrow"></span></a>
+        </div>
+      </div>
+      <div class="map-frame" data-reveal data-reveal-delay="1">
+        <span class="corner-tag">— Studio Map</span>
+        <img src="assets/map.png" alt="Wellbena 小田原スタジオ周辺マップ" loading="lazy"/>
+        <span class="corner-credit">浜町 3-11-41 · リーカル小田原</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 GALLERY -->
+<section class="section gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-num" data-reveal>07<small>Gallery</small></div>
+      <div>
+        <h2 class="sec-title" data-reveal data-reveal-delay="1">
+          <span class="en">— Studio Moments</span>
+          スタジオの空気感。
+        </h2>
+        <p class="sec-lede" data-reveal data-reveal-delay="2">
+          レッスンの一コマ、コミュニティの瞬間、屋上での秋のクラス。
+          言葉にしきれない時間を、画像で。
+        </p>
+      </div>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gphoto g1" data-reveal>
+        <img src="assets/portrait_20260505-032545_00_0.jpg" alt="Wellbena スタジオの広景・朝の光"/>
+        <span class="cap">— Studio Light</span>
+      </div>
+      <div class="gphoto g2" data-reveal data-reveal-delay="1">
+        <img src="assets/506954B0-BD2F-448C-8B15-525D508A5C2B-4-1024x768.jpg" alt="Wellbena 屋上から望む相模湾の朝"/>
+        <span class="cap">— Hamacho Coast</span>
+      </div>
+      <div class="gphoto g3" data-reveal data-reveal-delay="2">
+        <img src="assets/portrait_20260505-033328_00_0.jpg" alt="Wellbena スタジオ・木製ドアと暖かな朝の光"/>
+        <span class="cap">— Morning</span>
+      </div>
+      <div class="gphoto g4" data-reveal data-reveal-delay="3">
+        <img src="assets/portrait_20260505-033713_00_0.jpg" alt="Wellbena スタジオ・鏡と練習空間"/>
+        <span class="cap">— Practice</span>
+      </div>
+      <div class="gphoto g5" data-reveal data-reveal-delay="4">
+        <img src="assets/portrait_20260505-032236_00_0.jpg" alt="Wellbena 屋上のマットと相模湾"/>
+        <span class="cap">— Rooftop</span>
+      </div>
+      <div class="gphoto g6" data-reveal data-reveal-delay="5">
+        <img src="assets/portrait_20260505-034513_00_0.jpg" alt="Wellbena レッスンの一場面・インストラクターと生徒"/>
+        <span class="cap">— Adjustment</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 CONTACT -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-num" data-reveal>08<small>Contact</small></div>
+      <div>
+        <h2 class="sec-title" data-reveal data-reveal-delay="1">
+          <span class="en">— Get in Touch</span>
+          お問い合わせ。
+        </h2>
+        <p class="sec-lede" data-reveal data-reveal-delay="2">
+          ご質問・体験のご希望・取材のお問い合わせなど、
+          お気軽にご連絡ください。
+        </p>
+      </div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-text" data-reveal>
+        <h3>
+          まずは<br/>
+          <span class="it">気軽に</span><br/>
+          ご連絡ください。
+        </h3>
+        <p>
+          公式 LINE が一番スムーズです。フォームでもお気軽にどうぞ。
+          通常 24 時間以内にお返事いたします（定休日を除く）。
+        </p>
+
+        <div class="contact-channels">
+          <a href="#" class="channel">
+            <span class="ico">L</span>
+            <span>
+              <div class="ck">— Official Channel</div>
+              <div class="cv">LINE で問い合わせ</div>
+            </span>
+            <span class="arr"></span>
+          </a>
+          <a href="mailto:info@wellbena.net" class="channel">
+            <span class="ico">@</span>
+            <span>
+              <div class="ck">— Email</div>
+              <div class="cv">info@wellbena.net</div>
+            </span>
+            <span class="arr"></span>
+          </a>
+          <a href="#" class="channel">
+            <span class="ico">IG</span>
+            <span>
+              <div class="ck">— Instagram</div>
+              <div class="cv">@wellbena_odawara</div>
+            </span>
+            <span class="arr"></span>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" data-reveal data-reveal-delay="1" onsubmit="event.preventDefault(); alert('お問い合わせありがとうございます。実際のフォーム送信は LINE またはメールをご利用ください。');">
+        <div class="row">
+          <label for="f-name">お名前 — Name</label>
+          <input id="f-name" type="text" placeholder="山田 花子" required />
+        </div>
+        <div class="row">
+          <label for="f-email">メールアドレス — Email</label>
+          <input id="f-email" type="email" placeholder="you@example.com" required />
+        </div>
+        <div class="row">
+          <label for="f-topic">ご相談内容 — Topic</label>
+          <select id="f-topic">
+            <option>体験レッスンを予約したい</option>
+            <option>パーソナルレッスンについて</option>
+            <option>ボディメイクプログラムについて</option>
+            <option>その他のお問い合わせ</option>
+          </select>
+        </div>
+        <div class="row">
+          <label for="f-msg">メッセージ — Message</label>
+          <textarea id="f-msg" placeholder="ご希望の日時やご質問など、お気軽にどうぞ。"></textarea>
+        </div>
+        <button class="submit" type="submit">
+          <span>送信する / Send</span>
+          <span class="arrow" style="background:#fff"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="#home">
+          <span class="name" style="font-family:var(--display);font-style:italic">Wellbena</span>
+          <span class="sub">Odawara · Pilates Studio</span>
+        </a>
+        <p>
+          女性が美しくしなやかに、エイジング世代を送るための<br/>
+          ピラティス × コンディショニング × 美容 のスタジオ。
+        </p>
+      </div>
+      <div>
+        <h5>— Studio</h5>
+        <ul>
+          <li><a href="#pilates">ピラティスとは</a></li>
+          <li><a href="#wellbena">Wellbena</a></li>
+          <li><a href="#classes">クラス</a></li>
+          <li><a href="#pricing">料金</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>— Visit</h5>
+        <ul>
+          <li><a href="#reserve">予約</a></li>
+          <li><a href="#map">MAP / Access</a></li>
+          <li><a href="#gallery">ギャラリー</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>— Connect</h5>
+        <ul>
+          <li><a href="#">LINE 公式アカウント</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="mailto:info@wellbena.net">info@wellbena.net</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="giant" aria-hidden="true">Wellbena</div>
+
+    <div class="footer-bottom">
+      <span>© 2024–2026 Wellbena. All rights reserved.</span>
+      <div class="links">
+        <a href="#">免責同意書</a>
+        <a href="#">プライバシー・ポリシー</a>
+        <a href="#" style="color:var(--bronze)">↑ Back to Top</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  // Smooth anchor scroll already handled by CSS; small offset for sticky header
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const id = a.getAttribute('href');
+      if(id.length>1){
+        const t = document.querySelector(id);
+        if(t){
+          e.preventDefault();
+          const y = t.getBoundingClientRect().top + window.scrollY - 70;
+          window.scrollTo({top:y, behavior:'smooth'});
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
