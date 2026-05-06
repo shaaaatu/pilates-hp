@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://wellbena.net/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://wellbena.net/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wellbena.net/" />
+
+    <image:image>
+      <image:loc>https://wellbena.net/assets/portrait_20260505-040252_00_0.jpg</image:loc>
+      <image:title>Wellbena 少人数制マットピラティスレッスン</image:title>
+      <image:caption>小田原ピラティス Wellbena ヒーロー画像</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://wellbena.net/assets/portrait_20260505-025246_00_0.jpg</image:loc>
+      <image:title>Wellbena インストラクター 蛯名さおり</image:title>
+      <image:caption>PMA国際認定ピラティスインストラクター</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://wellbena.net/assets/portrait_20260505-032236_00_0.jpg</image:loc>
+      <image:title>Wellbena 屋上マットピラティスと相模湾</image:title>
+      <image:caption>浜町・相模湾を望む屋上ロケーション</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://wellbena.net/assets/portrait_20260505-032545_00_0.jpg</image:loc>
+      <image:title>Wellbena スタジオの広景・朝の光</image:title>
+      <image:caption>マットピラティス専用スタジオ内観</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://wellbena.net/assets/portrait_20260505-033328_00_0.jpg</image:loc>
+      <image:title>Wellbena スタジオ・木製ドアと暖かな朝の光</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://wellbena.net/assets/portrait_20260505-033713_00_0.jpg</image:loc>
+      <image:title>Wellbena スタジオ・鏡と練習空間</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://wellbena.net/assets/portrait_20260505-034513_00_0.jpg</image:loc>
+      <image:title>Wellbena レッスンの一場面</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://wellbena.net/assets/506954B0-BD2F-448C-8B15-525D508A5C2B-4-1024x768.jpg</image:loc>
+      <image:title>Wellbena 屋上から望む相模湾の朝</image:title>
+      <image:caption>小田原・浜町の海岸景観</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
